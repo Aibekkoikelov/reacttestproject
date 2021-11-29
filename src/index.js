@@ -6,7 +6,7 @@ import MarvelService from './services/MarvelService'
 
 const marvelService = new MarvelService();
 
-marvelService.getAllCharacters().then(result => result.data.results.forEach(character => console.log(character.name)))
+ marvelService.getAllCharacters().then(result => result.data.results.forEach(character => console.log(character.name)))
 
 
 marvelService.getCharacter(1011334).then(result => console.log(result)
