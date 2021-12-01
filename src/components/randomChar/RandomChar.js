@@ -70,7 +70,7 @@ class RandomChar extends Component {
 const View = ({ char }) => {
   const { name, description, thumbnail, homepage, wiki } = char;
    let  imgUrl = thumbnail.indexOf("image_not_available")>0? "contain" : "cover";
-    console.log(imgUrl);
+
     
   return (
     <div className="randomchar__block">
