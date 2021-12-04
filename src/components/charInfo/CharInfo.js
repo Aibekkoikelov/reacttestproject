@@ -27,6 +27,7 @@ class CharInfo extends Component {
     if (!charId) {
       return;
     }
+    this.canselError()
     this.onLoading();
     this.marvelService
       .getCharacter(charId)
@@ -35,6 +36,9 @@ class CharInfo extends Component {
       
      
   };
+  canselError = () => {
+    this.setState({ error : false})
+  }
   onError = () => {
     this.setState({
       loading: false,
@@ -103,9 +107,9 @@ const View = ({ char }) => {
       </>
     );
 }
-CharInfo.propTypes = {
-  charId:PropTypes.string
+// CharInfo.propTypes = {
+//   charId:PropTypes.number
 
-}
+// }
 
 export default CharInfo;

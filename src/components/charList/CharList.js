@@ -126,14 +126,18 @@ class CharList extends Component {
     const { charList, loaded, error, offset, newListLoading, charEnded } =
       this.state;
     const items = this.onRenderChar(charList);
-    const spinner = loaded ? <Spinner /> : null;
-    const errorMessage = error ? <ErrorMessage /> : null;
-    const content = !(loaded || error) ? items : null;
+    let content = null
+
+    if (loaded) {
+      content = <Spinner />
+    } else if (error) {
+      content = <ErrorMessage />
+    } else {
+      content = items
+    }
 
     return (
       <div className="char__list">
-        {errorMessage}
-        {spinner}
         {content}
         <button
           className="button button__main button__long"
